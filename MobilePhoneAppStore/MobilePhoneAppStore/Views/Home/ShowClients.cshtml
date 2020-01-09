@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "ShowClients";
+}
+
+<div style="margin-left:40%">
+    <h3>Список клиентов</h3>
+    <table>
+        <tr>
+            <td><p>Имя клиента</p></td>
+            <td><p>Адресс</p></td>
+            <td><p>Когда совершил покупку</p></td>
+         
+
+        </tr>
+        @foreach (var p in ViewBag.Clients)
+        {
+        <tr>
+            <td><p>@p.Name</p></td>
+            <td><p>@p.Adress</p></td>
+            <td><p>@p.DateTimeOfBuy</p></td>
+         
+        </tr>
+        }
+    </table>
+
+    
+</div>
+

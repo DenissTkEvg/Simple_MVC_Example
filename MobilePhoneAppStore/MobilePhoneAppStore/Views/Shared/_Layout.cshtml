@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="~/Scripts/Chart.js"></script>
+    <script src="~/Scripts/Chart.min.js"></script>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <title>@ViewBag.Title – приложение ASP.NET</title>
+    <style>
+        #chart_container {
+            margin-left: 30%;
+            width: 400px;
+            height: 200px;
+            border: 1px solid #ddd;
+            padding: 1px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+  
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <a href="/Home/Index">Главная</a>
+            <p>&copy; @DateTime.Now.ToShortTimeString()</p>
+        </footer>
+    </div>
+
+</body>
+</html>

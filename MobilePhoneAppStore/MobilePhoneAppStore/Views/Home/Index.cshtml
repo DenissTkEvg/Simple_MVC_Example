@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="div1" style="margin-left:30%">
+    <h3>Смартфоны на продажу</h3>
+    <table>
+        <tr>
+            <td><p>Модель смартфона</p></td>
+            <td><p>Тип ОС</p></td>
+            <td><p>Вес, г.</p></td>
+            <td><p>Цена, $</p></td>
+            <td><p>Кол-во на складе, шт.</p></td>
+            <td></td>
+        </tr>
+        @foreach (var p in ViewBag.Phones)
+        {
+        <tr>
+            <td><p>@p.Model</p></td>
+            <td><p>@p.TypeOS</p></td>
+            <td><p>@p.Weight</p></td>
+            <td><p>@p.Price</p></td>
+            <td><p>@p.Count</p></td>
+            <td><form action="/Home/Buy/@p.Id">
+                     <button type="submit">Купить</button>
+                 </form></td>
+            @*<td><p><a href="/Home/Buy/@p.Id">Купить</a></p></td>*@
+            
+        </tr>
+        }
+    </table>
+ 
+</div>
+<div class="div2" style="margin-left:40%">
+    <form action="/Home/ShowClients">
+        <button type="submit">Показать клиентов</button>
+    </form>
+    <form action="/Home/DashBar">
+        <button type="submit">Показать диаграмму</button>
+    </form>
+
+</div>

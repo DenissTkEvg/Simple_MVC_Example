@@ -1,0 +1,21 @@
+﻿@using MobilePhoneAppStore.Models
+
+
+    @{
+        List<string> ar = new List<string>();
+        foreach (MobilePhoneAppStore.Models.Phone p in Model)
+        {
+            ar.Add(p.Model);
+        }
+        List<int> ar2 = new List<int>();
+        foreach (MobilePhoneAppStore.Models.Phone p in Model)
+        {
+            ar2.Add(p.Count);
+        }
+        var myChart = new Chart(width: 500, height: 300, theme: ChartTheme.Green)
+    .AddTitle("Product Sales")
+    .AddSeries("Default",
+       xValue: ar, xField: "Name",
+       yValues: ar2, yFields: "Price").Write(".png");
+    }
+
